@@ -1,8 +1,8 @@
 # CamHackers
 
 # Solo se ha probado en Kali Linux 2020.3
-(images/test1.png)
-(images/test2.png)
+![alt text](images/test1.png)
+![alt text](images/test2.png)
 # INSTALACION
 
 # sudo apt-get update
