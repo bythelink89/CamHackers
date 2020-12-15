@@ -5,14 +5,14 @@ trap 'printf "\n";stop' 2
 banner() {
 
 
-printf "\e[1;35m  ▄▄·  ▄▄▄· • ▌ ▄ ·. \e[0m\e[1;36m  ▄ .▄ ▄▄▄·  ▄▄· ▄ •▄ ▄▄▄ .▄▄▄  .▄▄ · \e[0m\n"
-printf "\e[1;35m ▐█ ▌▪▐█ ▀█ ·██ ▐███▪\e[0m\e[1;36m ██▪▐█▐█ ▀█ ▐█ ▌▪█▌▄▌▪▀▄.▀·▀▄ █·▐█ ▀. \e[0m\n"
-printf "\e[1;35m ██ ▄▄██▀▀█ ▐█ ▌▐▌▐█·\e[0m\e[1;36m ██▀▐█▄█▀▀█ ██ ▄▄▐▀▀▄·▐▀▀▪▄▐▀▀▄ ▄▀▀▀█▄\e[0m\n"
-printf "\e[1;35m ▐███▌▐█ ▪▐▌██ ██▌▐█▌\e[0m\e[1;36m ▀█▌▐▀▐█ ▪▐▌▐███▌▐█.█▌▐█▄▄▌▐█•█▌▐█▄▪▐█\e[0m\n"
-printf "\e[1;35m ·▀▀▀  ▀  ▀ ▀▀  █▪▀▀▀\e[0m\e[1;36m  ▀▀ · ▀  ▀ ·▀▀▀ ·▀  ▀ ▀▀▀ .▀  ▀ ▀▀▀▀ \e[0m\n"
-printf "\e[1;35m                     \e[0m                                 \n"
+printf "\e[0;35m  ▄▄·  ▄▄▄· • ▌ ▄ ·. \e[0m\e[0;36m  ▄ .▄ ▄▄▄·  ▄▄· ▄ •▄ ▄▄▄ .▄▄▄  .▄▄ · \e[0m\n"
+printf "\e[0;35m ▐█ ▌▪▐█ ▀█ ·██ ▐███▪\e[0m\e[0;36m ██▪▐█▐█ ▀█ ▐█ ▌▪█▌▄▌▪▀▄.▀·▀▄ █·▐█ ▀. \e[0m\n"
+printf "\e[0;35m ██ ▄ ██▀▀█ ▐█ ▌▐▌▐█·\e[0m\e[0;36m ██▀▐█▄█▀▀█ ██ ▄▄▐▀▀▄·▐▀▀▪▄▐▀▀▄ ▄▀▀▀█▄\e[0m\n"
+printf "\e[0;35m ▐█ █▌▐█ ▪▐▌██ ██▌▐█▌\e[0m\e[0;36m ▀█▌▐▀▐█ ▪▐▌▐█ █▌▐█.█▌▐█▄▄▌▐█•█▌▐█▄▪▐█\e[0m\n"
+printf "\e[0;35m ·▀▀▀  ▀  ▀ ▀▀  █▪▀▀▀\e[0m\e[0;36m  ▀▀ · ▀  ▀ ·▀▀▀ ·▀  ▀ ▀▀▀ .▀  ▀ ▀▀▀▀ \e[0m\n"
+printf "\e[1;35m Solo para divertirte\e[0m\e[0;36m Just use with responsability                   \n"
 
-printf " \e[1;77m v0.1 by Evan01_bythelink89 \e[0m \n"
+printf " \e[1;77m v0.8 by Evan01_bythelink89 \e[0m \n"
 
 printf "\n"
 
@@ -79,7 +79,7 @@ if [[ -e "Log.log" ]]; then
 printf "\n\e[1;92m[\e[0m+\e[1;92m] Fotografia Recibida!\e[0m\n"
 rm -rf Log.log
 fi
-sleep 0.2
+sleep 1.0
 
 done 
 
